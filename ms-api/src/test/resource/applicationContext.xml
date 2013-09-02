@@ -20,15 +20,21 @@
 		</property>
 	</bean>
 	
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" depends-on="hsqlServer">
 		<property name="driverClassName" value="org.hsqldb.jdbcDriver"></property>
 		<property name="url" value="jdbc:hsqldb:hsql://localhost/msapi"></property>
 		<property name="username" value="sa"></property>
 		<property name="password" value=""></property>
 	</bean>
 	
+	<!-- Database DDL -->
 	<jdbc:initialize-database data-source="dataSource" ignore-failures="NONE">
 		<jdbc:script location="classpath:/ddl/ms-api.sql"/>
 	</jdbc:initialize-database>
+	
+	<!-- DAO -->
+	<bean id="productDao" class="org.ms.api.dao.ProductDaoImpl">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
 	
 </beans>
