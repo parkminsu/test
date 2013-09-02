@@ -17,6 +17,7 @@ public class ProductDaoImpl extends JdbcDaoSupport implements BasicDao<Integer, 
 	@Override
 	public int updateByPrimaryKey(Integer primaryKey, Product product) {
 		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 
