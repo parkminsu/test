@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//www.mybatis.org//DTD Config 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- default settings 사용 -->
+	<!-- type aliaes만 적용 -->
+	<typeAliases>
+		<typeAlias type="org.ms.api.model.Product" alias="Product"/>
+	</typeAliases>	
+</configuration>
