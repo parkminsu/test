@@ -1,4 +1,4 @@
-package org.ms.api.hsql.exception;
+package org.ms.api.db.exception;
 
 public class HsqlAclFormateException extends RuntimeException{
 	private static final long serialVersionUID = 7892134464223257909L;

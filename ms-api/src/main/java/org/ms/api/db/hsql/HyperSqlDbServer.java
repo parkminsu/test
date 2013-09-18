@@ -1,4 +1,4 @@
-package org.ms.api.hsql;
+package org.ms.api.db.hsql;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,9 +8,9 @@ import java.util.Properties;
 import org.hsqldb.Server;
 import org.hsqldb.persist.HsqlProperties;
 import org.hsqldb.server.ServerAcl.AclFormatException;
-import org.ms.api.hsql.exception.HsqlAclFormateException;
-import org.ms.api.hsql.exception.HsqlIOException;
-import org.ms.api.hsql.exception.HsqlNotSetPropertiesException;
+import org.ms.api.db.exception.HsqlAclFormateException;
+import org.ms.api.db.exception.HsqlIOException;
+import org.ms.api.db.exception.HsqlNotSetPropertiesException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.SmartLifecycle;
@@ -51,10 +51,9 @@ public class HyperSqlDbServer implements SmartLifecycle {
 		properties.list(printWriter);
 		printWriter.flush();
 		printWriter.close();	
-		logger.debug(stringWriter.toString());
-			
+		logger.debug(stringWriter.toString());		
 	}
-
+	
 	@Override
 	public void start() {
 		// TODO Auto-generated method stub
@@ -84,6 +83,7 @@ public class HyperSqlDbServer implements SmartLifecycle {
 			}
 		}
 	}
+		
 
 	@Override
 	public void stop() {

@@ -16,7 +16,7 @@ import org.springframework.util.Log4jConfigurer;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"/applicationContext.xml"})
-public class testApplicationContext {
+public class ApplicationContextTest {
 	@Autowired 
 	private ApplicationContext context;
 	

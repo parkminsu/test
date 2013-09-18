@@ -1,4 +1,4 @@
-package org.ms.api.hsql.exception;
+package org.ms.api.db.exception;
 
 public class HsqlIOException extends RuntimeException {
 	private static final long serialVersionUID = -7730002160129604599L;

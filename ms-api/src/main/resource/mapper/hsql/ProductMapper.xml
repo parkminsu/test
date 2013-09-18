@@ -12,7 +12,14 @@
 	public T selectRowByIndex(I index);
 	public List<T> selectRowsByIndex(I index);
 	-->
-	<update id="insert" parameterType=""></update>
-	<select id="">
+	<insert id="insert" parameterType="map" useGeneratedKeys="true" keyProperty="value.id">
+		INSERT INTO PRODUCT (name, description, price)
+			VALUES (#{value.name}, #{value.description}, #{value.price})
+	</insert>
+	<select id="selectAll" resultType="Product">
+		SELECT * FROM PRODUCT
 	</select>
+	<delete id="deleteAll">
+		DELETE FROM PRODUCT
+	</delete>
 </mapper>
