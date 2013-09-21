@@ -13,13 +13,13 @@
 	public List<T> selectRowsByIndex(I index);
 	-->
 	<insert id="insert" parameterType="map" useGeneratedKeys="true" keyProperty="value.id">
-		INSERT INTO PRODUCT (name, description, price)
+		INSERT INTO PRODUCTS (name, description, price)
 			VALUES (#{value.name}, #{value.description}, #{value.price})
 	</insert>
 	<select id="selectAll" resultType="Product">
-		SELECT * FROM PRODUCT
+		SELECT * FROM PRODUCTS
 	</select>
 	<delete id="deleteAll">
-		DELETE FROM PRODUCT
+		DELETE FROM PRODUCTS
 	</delete>
 </mapper>

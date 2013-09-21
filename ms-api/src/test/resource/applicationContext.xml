@@ -26,7 +26,7 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" depends-on="hsqlServer">
 		<property name="driverClassName" value="org.hsqldb.jdbcDriver"></property>
 		<property name="url" value="jdbc:hsqldb:hsql://localhost/msapi"></property>
-		<property name="username" value="sa"></property>
+		<property name="username" value="SA"></property>
 		<property name="password" value=""></property>
 	</bean>
 	

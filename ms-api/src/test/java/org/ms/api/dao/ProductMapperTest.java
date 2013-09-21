@@ -1,7 +1,9 @@
 package org.ms.api.dao;
 
-import java.util.List;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.ms.api.model.Product;
@@ -14,21 +16,21 @@ import org.springframework.transaction.annotation.Transactional;
 @ContextConfiguration(locations={"/applicationContext.xml"})
 public class ProductMapperTest {
 	@Autowired
-	ProductMapper productMapper;
+	private ProductMapper productMapper;
+	private Product product; 
 	
-	@Transactional
-	@Test
-	public void testInsertAndSelectAll() {
-		productMapper.deleteAll();
-		Product product = new Product();
+	@Before
+	public void setUp() {
+		product = new Product();
 		product.setName("PRO1");
 		product.setPrice(1234);
 		product.setDescription("DESC1");
+	}
+	
+	@Transactional
+	@Test
+	public void testInsert() {
 		int affectedRow = productMapper.insert(product);
-		System.out.println("AffectedRow : " + affectedRow);
-		List<Product> list = productMapper.selectAll();
-		for(Product retProduct : list) {
-			System.out.println(retProduct.toString());
-		}
+		assertThat(affectedRow, is(1));
 	}
 }
